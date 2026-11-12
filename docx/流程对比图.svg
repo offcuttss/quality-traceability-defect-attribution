@@ -1,0 +1,152 @@
+<svg viewBox="0 0 680 850" width="1360" height="1700" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>质量追溯流程对比：现状与智能体方案</title>
+<desc>上半部分为无 AI 介入的现状流程，下半部分为智能体方案流程，两者均含菱形判断节点，底部为关键差异对照。</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+<style>
+text{font-family:system-ui,"Microsoft YaHei",sans-serif}
+.h1{font-size:15px;font-weight:500;fill:#2C2C2A}
+.h2{font-size:14px;font-weight:500;fill:#2C2C2A}
+.cap{font-size:11px;fill:#5F5E5A}
+.n1{font-size:12px;font-weight:500}
+.n2{font-size:11px}
+.d1{font-size:11px;font-weight:500;fill:#412402}
+.d2{font-size:11px;fill:#854F0B}
+</style>
+<rect x="0" y="0" width="680" height="850" fill="#FFFFFF"/>
+<text class="h1" x="40" y="34">质量追溯流程对比：现状 vs 智能体方案</text>
+<text class="cap" x="40" y="56">依据 discovery-report.md 的 36 条事实 · 菱形 = 判断节点 · 上下两栏为同一业务链的两种走法</text>
+
+<rect x="40" y="76" width="600" height="324" rx="12" fill="#FFFFFF" stroke="#D3D1C7" stroke-width="0.5"/>
+<text class="h2" x="56" y="98">① 无 AI 介入（现状）：手写 → 补录 → 断链 → 靠人记</text>
+<text class="cap" x="624" y="98" text-anchor="end" fill="#A32D2D">返工率 7.8% · 定位 2 天</text>
+
+<rect x="56" y="118" width="128" height="60" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="n1" x="120" y="140" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">首件检验</text>
+<text class="n2" x="120" y="160" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">手写检测表</text>
+<rect x="200" y="118" width="128" height="60" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="n1" x="264" y="140" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">二次录入</text>
+<text class="n2" x="264" y="160" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">批次机台缺漏</text>
+<polygon points="408,118 472,148 408,178 344,148" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<text class="d1" x="408" y="140" text-anchor="middle" dominant-baseline="central">判断：齐全？</text>
+<text class="d2" x="408" y="160" text-anchor="middle" dominant-baseline="central">否→翻表补录</text>
+<rect x="488" y="118" width="128" height="60" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="n1" x="552" y="140" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">人工补录</text>
+<text class="n2" x="552" y="160" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">问当班同事</text>
+<line x1="184" y1="148" x2="200" y2="148" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="328" y1="148" x2="344" y2="148" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="472" y1="148" x2="488" y2="148" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<rect x="56" y="208" width="128" height="60" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="n1" x="120" y="230" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">巡检与隔离</text>
+<text class="n2" x="120" y="250" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">六节点流程</text>
+<rect x="200" y="208" width="128" height="60" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="n1" x="264" y="230" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">原因分析</text>
+<text class="n2" x="264" y="250" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">耗时未量化</text>
+<polygon points="408,208 472,238 408,268 344,238" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<text class="d1" x="408" y="230" text-anchor="middle" dominant-baseline="central">判断：换批号？</text>
+<text class="d2" x="408" y="250" text-anchor="middle" dominant-baseline="central">是→追溯断链</text>
+<rect x="488" y="208" width="128" height="60" rx="8" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/>
+<text class="n1" x="552" y="230" text-anchor="middle" dominant-baseline="central" fill="#501313">追溯断链</text>
+<text class="n2" x="552" y="250" text-anchor="middle" dominant-baseline="central" fill="#A32D2D">原刀具不可追</text>
+<line x1="184" y1="238" x2="200" y2="238" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="328" y1="238" x2="344" y2="238" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="472" y1="238" x2="488" y2="238" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<rect x="56" y="298" width="128" height="60" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="n1" x="120" y="320" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">便签口头交接</text>
+<text class="n2" x="120" y="340" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">说明不随单据</text>
+<rect x="200" y="298" width="128" height="60" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="n1" x="264" y="320" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">复检与签核</text>
+<text class="n2" x="264" y="340" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">靠人记</text>
+<polygon points="408,298 472,328 408,358 344,328" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<text class="d1" x="408" y="320" text-anchor="middle" dominant-baseline="central">判断：签核齐？</text>
+<text class="d2" x="408" y="340" text-anchor="middle" dominant-baseline="central">否→无拦截</text>
+<rect x="488" y="298" width="128" height="60" rx="8" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/>
+<text class="n1" x="552" y="320" text-anchor="middle" dominant-baseline="central" fill="#501313">放行归档</text>
+<text class="n2" x="552" y="340" text-anchor="middle" dominant-baseline="central" fill="#A32D2D">错误放行风险</text>
+<line x1="184" y1="328" x2="200" y2="328" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="328" y1="328" x2="344" y2="328" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="472" y1="328" x2="488" y2="328" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<path d="M616,148 H628 V190 H120 V208" fill="none" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3 3" marker-end="url(#arrow)"/>
+<path d="M616,238 H628 V280 H120 V298" fill="none" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3 3" marker-end="url(#arrow)"/>
+<text class="cap" x="340" y="194" text-anchor="middle">续</text>
+<text class="cap" x="340" y="284" text-anchor="middle">续</text>
+<rect x="56" y="370" width="568" height="22" rx="6" fill="#FCEBEB" stroke="#F7C1C1" stroke-width="0.5"/>
+<text class="cap" x="64" y="381" dominant-baseline="central" fill="#791F1F">痛点：断链不拦截 · 歧义数据混入 · 留痕不可重建 · 放行无代码层校验</text>
+
+<rect x="40" y="412" width="600" height="324" rx="12" fill="#FFFFFF" stroke="#B5D4F4" stroke-width="0.5"/>
+<text class="h2" x="56" y="434">② 智能体方案（首期）：就地录入 → 红线校验 → 人工签核</text>
+<text class="cap" x="624" y="434" text-anchor="end" fill="#185FA5">追溯 99% · 放行 0</text>
+
+<rect x="56" y="454" width="128" height="60" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text class="n1" x="120" y="476" text-anchor="middle" dominant-baseline="central" fill="#042C53">就地录入</text>
+<text class="n2" x="120" y="496" text-anchor="middle" dominant-baseline="central" fill="#185FA5">草稿+同步时间</text>
+<rect x="200" y="454" width="128" height="60" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text class="n1" x="264" y="476" text-anchor="middle" dominant-baseline="central" fill="#042C53">字段校验</text>
+<text class="n2" x="264" y="496" text-anchor="middle" dominant-baseline="central" fill="#185FA5">编号/版本/校准</text>
+<polygon points="408,454 472,484 408,514 344,484" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<text class="d1" x="408" y="476" text-anchor="middle" dominant-baseline="central">判断：校验过？</text>
+<text class="d2" x="408" y="496" text-anchor="middle" dominant-baseline="central">否→修复队列</text>
+<rect x="488" y="454" width="128" height="60" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text class="n1" x="552" y="476" text-anchor="middle" dominant-baseline="central" fill="#042C53">人工修复队列</text>
+<text class="n2" x="552" y="496" text-anchor="middle" dominant-baseline="central" fill="#185FA5">不进推荐样本</text>
+<line x1="184" y1="484" x2="200" y2="484" stroke="#378ADD" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="328" y1="484" x2="344" y2="484" stroke="#378ADD" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="472" y1="484" x2="488" y2="484" stroke="#378ADD" stroke-width="1" marker-end="url(#arrow)"/>
+
+<rect x="56" y="544" width="128" height="60" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text class="n1" x="120" y="566" text-anchor="middle" dominant-baseline="central" fill="#042C53">巡检与隔离</text>
+<text class="n2" x="120" y="586" text-anchor="middle" dominant-baseline="central" fill="#185FA5">只读业务状态</text>
+<rect x="200" y="544" width="128" height="60" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text class="n1" x="264" y="566" text-anchor="middle" dominant-baseline="central" fill="#042C53">Harness 归因</text>
+<text class="n2" x="264" y="586" text-anchor="middle" dominant-baseline="central" fill="#185FA5">图谱+向量+LLM</text>
+<polygon points="408,544 472,574 408,604 344,574" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<text class="d1" x="408" y="566" text-anchor="middle" dominant-baseline="central">判断：置信够？</text>
+<text class="d2" x="408" y="586" text-anchor="middle" dominant-baseline="central">否→转人工</text>
+<rect x="488" y="544" width="128" height="60" rx="8" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/>
+<text class="n1" x="552" y="566" text-anchor="middle" dominant-baseline="central" fill="#501313">转人工三要素</text>
+<text class="n2" x="552" y="586" text-anchor="middle" dominant-baseline="central" fill="#A32D2D">原因/接手/时间</text>
+<line x1="184" y1="574" x2="200" y2="574" stroke="#378ADD" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="328" y1="574" x2="344" y2="574" stroke="#378ADD" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="472" y1="574" x2="488" y2="574" stroke="#378ADD" stroke-width="1" marker-end="url(#arrow)"/>
+
+<rect x="56" y="634" width="128" height="60" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text class="n1" x="120" y="656" text-anchor="middle" dominant-baseline="central" fill="#042C53">返工登记</text>
+<text class="n2" x="120" y="676" text-anchor="middle" dominant-baseline="central" fill="#185FA5">强制关联原批号</text>
+<polygon points="264,634 328,664 264,694 200,664" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<text class="d1" x="264" y="656" text-anchor="middle" dominant-baseline="central">判断：原批号？</text>
+<text class="d2" x="264" y="676" text-anchor="middle" dominant-baseline="central">否→断链拦截</text>
+<rect x="344" y="634" width="128" height="60" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text class="n1" x="408" y="656" text-anchor="middle" dominant-baseline="central" fill="#042C53">追溯清单</text>
+<text class="n2" x="408" y="676" text-anchor="middle" dominant-baseline="central" fill="#185FA5">时点/版本/待刷新</text>
+<polygon points="552,634 616,664 552,694 488,664" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<text class="d1" x="552" y="656" text-anchor="middle" dominant-baseline="central">判断：复检签核？</text>
+<text class="d2" x="552" y="676" text-anchor="middle" dominant-baseline="central">否→硬拦截</text>
+<line x1="184" y1="664" x2="200" y2="664" stroke="#378ADD" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="328" y1="664" x2="344" y2="664" stroke="#378ADD" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="472" y1="664" x2="488" y2="664" stroke="#378ADD" stroke-width="1" marker-end="url(#arrow)"/>
+<path d="M616,484 H628 V526 H120 V544" fill="none" stroke="#85B7EB" stroke-width="0.5" stroke-dasharray="3 3" marker-end="url(#arrow)"/>
+<path d="M616,574 H628 V616 H120 V634" fill="none" stroke="#85B7EB" stroke-width="0.5" stroke-dasharray="3 3" marker-end="url(#arrow)"/>
+<text class="cap" x="340" y="530" text-anchor="middle">续</text>
+<text class="cap" x="340" y="620" text-anchor="middle">续</text>
+<rect x="56" y="706" width="568" height="22" rx="6" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="0.5"/>
+<text class="cap" x="64" y="717" dominant-baseline="central" fill="#0C447C">是 → 人工签核放行（AI 不参与）→ 审计六字段落库，可重建处理链；AI 只做提示与风险标记</text>
+
+<text class="h2" x="40" y="762">关键差异对照</text>
+<rect x="40" y="774" width="141" height="56" rx="8" fill="#FFFFFF" stroke="#D3D1C7" stroke-width="0.5"/>
+<text class="n1" x="52" y="794" fill="#2C2C2A">定位耗时</text>
+<text class="n2" x="52" y="814" fill="#5F5E5A">2 天 → 目标 4 小时</text>
+<rect x="193" y="774" width="141" height="56" rx="8" fill="#FFFFFF" stroke="#D3D1C7" stroke-width="0.5"/>
+<text class="n1" x="205" y="794" fill="#2C2C2A">追溯链</text>
+<text class="n2" x="205" y="814" fill="#5F5E5A">无拦截 → 强制关联</text>
+<rect x="346" y="774" width="141" height="56" rx="8" fill="#FFFFFF" stroke="#D3D1C7" stroke-width="0.5"/>
+<text class="n1" x="358" y="794" fill="#2C2C2A">放行</text>
+<text class="n2" x="358" y="814" fill="#5F5E5A">靠人记 → 代码硬拦截</text>
+<rect x="499" y="774" width="141" height="56" rx="8" fill="#FFFFFF" stroke="#D3D1C7" stroke-width="0.5"/>
+<text class="n1" x="511" y="794" fill="#2C2C2A">留痕</text>
+<text class="n2" x="511" y="814" fill="#5F5E5A">便签 → 六字段审计</text>
+</svg>

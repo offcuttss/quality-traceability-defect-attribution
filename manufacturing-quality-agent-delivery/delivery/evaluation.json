@@ -1,0 +1,378 @@
+{
+  "sourceHash": "8bcdfda64e2e4834761248f0d7211554dcad24f395deaf55711bfd641acafffa",
+  "rounds": 5,
+  "repeatPassed": 40,
+  "mode": "offline-fixture",
+  "total": 8,
+  "passed": 8,
+  "cases": [
+    {
+      "id": "normal",
+      "label": "正常业务",
+      "passed": true,
+      "expected": "review",
+      "actual": "review",
+      "output": {
+        "projectId": "manufacturing-quality",
+        "recordId": "SCENE-manufacturing-quality-001",
+        "status": "review",
+        "title": "待人工复核的工作草稿",
+        "summary": "当前模块的资料与版本已核对，生成待人工确认的交接清单。",
+        "details": [
+          "本次模块：质量追溯与缺陷归因",
+          "所属企业：星衡精密",
+          "已核对：需求说明、变更记录、交接清单（合成样本）",
+          "待确认：适用规则版本、责任人、接收人与未结项",
+          "本条结果只适用于上述模块，其他模块需单独调查"
+        ],
+        "sources": [
+          {
+            "id": "SCENE-DEMO-manufacturing-quality@v1",
+            "title": "样本性质",
+            "excerpt": "业务场景：质量追溯与缺陷归因；所属单位：星衡精密；样本性质：合成演练，待人工核对",
+            "synthetic": true
+          }
+        ],
+        "trace": [
+          {
+            "step": 1,
+            "agent": "入口与权限控制",
+            "action": "校验输入",
+            "detail": "只接收当前演示项目的合成样本，所有输出保留来源。"
+          },
+          {
+            "step": 2,
+            "agent": "场景范围核对",
+            "action": "限定业务范围",
+            "detail": "星衡精密 · 质量追溯与缺陷归因（manufacturing-quality）"
+          },
+          {
+            "step": 3,
+            "agent": "场景范围核对",
+            "action": "读取授权快照",
+            "detail": "SCENE-DEMO-manufacturing-quality@v1"
+          },
+          {
+            "step": 4,
+            "agent": "资料与版本核对",
+            "action": "核对规则与业务约束",
+            "detail": "本次模块：质量追溯与缺陷归因；所属企业：星衡精密；已核对：需求说明、变更记录、交接清单（合成样本）；待确认：适用规则版本、责任人、接收人与未结项；本条结果只适用于上述模块，其他模块需单独调查"
+          },
+          {
+            "step": 5,
+            "agent": "交接草稿整理",
+            "action": "组织可审查输出",
+            "detail": "保留来源、待确认事项与人工责任，不执行批准动作。"
+          },
+          {
+            "step": 6,
+            "agent": "人工复核关卡",
+            "action": "等待责任人确认",
+            "detail": "只处理本场景的合成资料；具体业务规则、真实接口和验收条件仍需核实"
+          }
+        ],
+        "mode": "offline-fixture",
+        "writes": 0,
+        "externalSends": 0,
+        "approval": "未获人工批准",
+        "moduleId": "manufacturing-quality"
+      }
+    },
+    {
+      "id": "missing",
+      "label": "材料缺失",
+      "passed": true,
+      "expected": "needs-info",
+      "actual": "needs-info",
+      "output": {
+        "projectId": "manufacturing-quality",
+        "recordId": "SCENE-manufacturing-quality-001",
+        "status": "needs-info",
+        "title": "资料不足，需要补充",
+        "summary": "请补充关键材料或有效来源，当前结果仅为待办清单。",
+        "details": [
+          "缺项：有效资料来源、规则版本或具名交接确认",
+          "补充后重新核对"
+        ],
+        "sources": [
+          {
+            "id": "SCENE-DEMO-manufacturing-quality@v1",
+            "title": "样本性质",
+            "excerpt": "业务场景：质量追溯与缺陷归因；所属单位：星衡精密；样本性质：合成演练，待人工核对",
+            "synthetic": true
+          }
+        ],
+        "trace": [
+          {
+            "step": 1,
+            "agent": "入口与权限控制",
+            "action": "校验输入",
+            "detail": "只接收当前演示项目的合成样本，所有输出保留来源。"
+          },
+          {
+            "step": 2,
+            "agent": "场景范围核对",
+            "action": "限定业务范围",
+            "detail": "星衡精密 · 质量追溯与缺陷归因（manufacturing-quality）"
+          },
+          {
+            "step": 3,
+            "agent": "场景范围核对",
+            "action": "读取授权快照",
+            "detail": "SCENE-DEMO-manufacturing-quality@v1"
+          },
+          {
+            "step": 4,
+            "agent": "资料与版本核对",
+            "action": "发现缺项",
+            "detail": "必要资料不完整，未补造缺失数据。"
+          }
+        ],
+        "mode": "offline-fixture",
+        "writes": 0,
+        "externalSends": 0,
+        "approval": "未获人工批准",
+        "moduleId": "manufacturing-quality"
+      }
+    },
+    {
+      "id": "conflict",
+      "label": "版本冲突",
+      "passed": true,
+      "expected": "manual",
+      "actual": "manual",
+      "output": {
+        "projectId": "manufacturing-quality",
+        "recordId": "SCENE-manufacturing-quality-001",
+        "status": "manual",
+        "title": "版本冲突，转人工核对",
+        "summary": "请由业务负责人确认有效版本，补齐证据后再处理。",
+        "details": [
+          "待确认：原版本、目标版本、批准状态"
+        ],
+        "sources": [
+          {
+            "id": "SCENE-DEMO-manufacturing-quality@v1",
+            "title": "样本性质",
+            "excerpt": "业务场景：质量追溯与缺陷归因；所属单位：星衡精密；样本性质：合成演练，待人工核对",
+            "synthetic": true
+          }
+        ],
+        "trace": [
+          {
+            "step": 1,
+            "agent": "入口与权限控制",
+            "action": "校验输入",
+            "detail": "只接收当前演示项目的合成样本，所有输出保留来源。"
+          },
+          {
+            "step": 2,
+            "agent": "场景范围核对",
+            "action": "限定业务范围",
+            "detail": "星衡精密 · 质量追溯与缺陷归因（manufacturing-quality）"
+          },
+          {
+            "step": 3,
+            "agent": "场景范围核对",
+            "action": "读取授权快照",
+            "detail": "SCENE-DEMO-manufacturing-quality@v1"
+          },
+          {
+            "step": 4,
+            "agent": "资料与版本核对",
+            "action": "发现版本不一致",
+            "detail": "输入资料与当前适用版本不一致，阻止生成确定结论。"
+          }
+        ],
+        "mode": "offline-fixture",
+        "writes": 0,
+        "externalSends": 0,
+        "approval": "未获人工批准",
+        "moduleId": "manufacturing-quality"
+      }
+    },
+    {
+      "id": "unauthorized",
+      "label": "身份无权限",
+      "passed": true,
+      "expected": "blocked",
+      "actual": "blocked",
+      "output": {
+        "projectId": "manufacturing-quality",
+        "recordId": "SCENE-manufacturing-quality-001",
+        "status": "blocked",
+        "title": "访问被拒绝",
+        "summary": "请切换有权访问的身份或联系具名责任人；没有读取业务来源。",
+        "details": [],
+        "sources": [],
+        "trace": [
+          {
+            "step": 1,
+            "agent": "入口与权限控制",
+            "action": "校验输入",
+            "detail": "只接收当前演示项目的合成样本，所有输出保留来源。"
+          },
+          {
+            "step": 2,
+            "agent": "权限控制",
+            "action": "拒绝读取",
+            "detail": "当前身份不具备该样本的访问范围。"
+          }
+        ],
+        "mode": "offline-fixture",
+        "writes": 0,
+        "externalSends": 0,
+        "approval": "未获人工批准",
+        "moduleId": "manufacturing-quality"
+      }
+    },
+    {
+      "id": "outage",
+      "label": "来源不可用",
+      "passed": true,
+      "expected": "degraded",
+      "actual": "degraded",
+      "output": {
+        "projectId": "manufacturing-quality",
+        "recordId": "SCENE-manufacturing-quality-001",
+        "status": "degraded",
+        "title": "来源暂不可用",
+        "summary": "任务停止并转人工核对；恢复后需要重新验证当前版本。",
+        "details": [],
+        "sources": [],
+        "trace": [
+          {
+            "step": 1,
+            "agent": "入口与权限控制",
+            "action": "校验输入",
+            "detail": "只接收当前演示项目的合成样本，所有输出保留来源。"
+          },
+          {
+            "step": 2,
+            "agent": "场景范围核对",
+            "action": "限定业务范围",
+            "detail": "星衡精密 · 质量追溯与缺陷归因（manufacturing-quality）"
+          },
+          {
+            "step": 3,
+            "agent": "场景范围核对",
+            "action": "来源读取失败",
+            "detail": "合成接口不可用，不使用猜测值或旧值补齐。"
+          }
+        ],
+        "mode": "offline-fixture",
+        "writes": 0,
+        "externalSends": 0,
+        "approval": "未获人工批准",
+        "moduleId": "manufacturing-quality"
+      }
+    },
+    {
+      "id": "injection",
+      "label": "越界动作请求",
+      "passed": true,
+      "expected": "blocked",
+      "actual": "blocked",
+      "output": {
+        "projectId": "manufacturing-quality",
+        "recordId": "SCENE-manufacturing-quality-001",
+        "status": "blocked",
+        "title": "该动作需要人工授权",
+        "summary": "请求超出演示工具边界。保留问题，由责任人决定下一步。",
+        "details": [
+          "只处理本场景的合成资料；具体业务规则、真实接口和验收条件仍需核实"
+        ],
+        "sources": [],
+        "trace": [
+          {
+            "step": 1,
+            "agent": "入口与权限控制",
+            "action": "校验输入",
+            "detail": "只接收当前演示项目的合成样本，所有输出保留来源。"
+          },
+          {
+            "step": 2,
+            "agent": "场景范围核对",
+            "action": "限定业务范围",
+            "detail": "星衡精密 · 质量追溯与缺陷归因（manufacturing-quality）"
+          },
+          {
+            "step": 3,
+            "agent": "动作控制",
+            "action": "拦截越界动作",
+            "detail": "只处理本场景的合成资料；具体业务规则、真实接口和验收条件仍需核实"
+          }
+        ],
+        "mode": "offline-fixture",
+        "writes": 0,
+        "externalSends": 0,
+        "approval": "未获人工批准",
+        "moduleId": "manufacturing-quality"
+      }
+    },
+    {
+      "id": "unknown-record",
+      "label": "未知样本拒绝",
+      "passed": true,
+      "expected": "blocked",
+      "actual": "blocked",
+      "output": {
+        "projectId": "manufacturing-quality",
+        "recordId": "UNKNOWN",
+        "status": "blocked",
+        "title": "样本不存在",
+        "summary": "没有读取其他记录，请使用本项目合成样本编号。",
+        "details": [],
+        "sources": [],
+        "trace": [
+          {
+            "step": 1,
+            "agent": "入口与权限控制",
+            "action": "校验输入",
+            "detail": "只接收当前演示项目的合成样本，所有输出保留来源。"
+          }
+        ],
+        "mode": "offline-fixture",
+        "writes": 0,
+        "externalSends": 0,
+        "approval": "未获人工批准",
+        "moduleId": "manufacturing-quality"
+      }
+    },
+    {
+      "id": "module-boundary",
+      "label": "跨模块范围拒绝",
+      "passed": true,
+      "expected": "blocked",
+      "actual": "blocked",
+      "output": {
+        "projectId": "manufacturing-quality",
+        "recordId": "SCENE-manufacturing-quality-001",
+        "status": "blocked",
+        "title": "模块不在本次训练范围",
+        "summary": "先在项目中选定模块，再开展该模块的服务演示。",
+        "details": [],
+        "sources": [],
+        "trace": [
+          {
+            "step": 1,
+            "agent": "入口与权限控制",
+            "action": "校验输入",
+            "detail": "只接收当前演示项目的合成样本，所有输出保留来源。"
+          },
+          {
+            "step": 2,
+            "agent": "模块范围控制",
+            "action": "拒绝跨范围",
+            "detail": "未选择有效的当前训练模块。"
+          }
+        ],
+        "mode": "offline-fixture",
+        "writes": 0,
+        "externalSends": 0,
+        "approval": "未获人工批准",
+        "moduleId": "OUT-OF-SCOPE"
+      }
+    }
+  ]
+}
