@@ -1,0 +1,46 @@
+# 质量追溯与缺陷归因 MVP —— 全局配置
+# 所有可变参数集中在此，代码中不写死任何地址、口令、阈值
+server:                          # 服务监听配置
+  host: "127.0.0.1"              # 仅本机监听，避免暴露到局域网
+  port: 8000                     # 服务端口
+  app_title: "质量追溯与缺陷归因 MVP"  # FastAPI 文档标题
+database:                        # 关系库配置
+  path: "data/starheng.db"       # SQLite 文件相对路径（相对项目根目录）
+auth:                            # 两级权限配置，demo 用静态账号，生产须接企业身份系统
+  token_secret: "demo-only-change-me"  # demo 签名密钥，生产必须从环境变量注入
+  token_ttl_seconds: 3600        # 令牌有效期（秒）
+  users:                         # 账号清单
+    - username: "admin"          # 管理员账号
+      password: "admin123"       # 管理员口令（demo 明文，仅用于本地演练）
+      role: "admin"              # 角色：管理员，可看量值/证书/工艺版本/返工单，可签核
+      display_name: "傅景"       # 显示名：对应产品安全负责人
+    - username: "user"           # 普通用户账号
+      password: "user123"        # 用户口令（demo 明文）
+      role: "user"               # 角色：用户，仅看追溯清单辅助字段，不可签核
+      display_name: "林亦舟"     # 显示名：对应质检员
+llm:                             # 本地大模型配置，代码不写死地址
+  enabled: false                 # MVP 默认走本地规则引擎，保证无 Ollama 也能跑
+  base_url: "http://127.0.0.1:11434"  # Ollama 地址，仅 enabled=true 时使用
+  chat_model: "qwen2.5:7b"       # 起草模型名
+  embed_model: "nomic-embed-text"      # 向量模型名
+  timeout_seconds: 10            # 调用超时，超时即降级转人工
+kb:                              # 知识库（知识图谱）配置
+  graph_path: "data/knowledge_graph.graphml"  # 图谱持久化文件
+  rebuild_on_start: true         # 启动时按种子数据重建图谱
+  freshness_cycles: 1            # 超过几个更新周期标为待刷新
+  update_cycles_per_day: 2       # 每天更新两次业务状态（对应 f34）
+redlines:                        # 数据红线硬约束参数
+  blocked_release_without_signoff: true  # 未复检+签核不得放行（f40）
+  break_chain_needs_manual: true         # 换批号断链必须转人工（f11/f44）
+  manual_required_fields: ["trigger_reason", "handler", "confirmed_at"]  # 转人工三要素（f44）
+  ambiguity_to_repair_queue: true        # 歧义记录进人工修复队列（f33）
+  low_confidence_to_manual: 0.65         # 置信度低于此值转人工
+  audit_fields: ["biz_no", "data_version", "fact_refs", "suggestion", "human_changes", "signer"]  # 审计六字段（f45）
+scenarios:                       # 故障注入场景，沿用原 demo 的场景语义
+  - normal                       # 正常业务
+  - missing                      # 材料缺漏
+  - conflict                     # 版本冲突
+  - unauthorized                 # 越权访问
+  - outage                       # 来源不可用
+  - injection                    # 越界动作请求
+  - broken_chain                 # 返工换批号追溯断链（f11 核心场景）
